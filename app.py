@@ -66,3 +66,6 @@ def transcribe():
     )
     blog = completion.choices[0].message.content
     return jsonify({"blog": blog})
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
